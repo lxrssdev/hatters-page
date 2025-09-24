@@ -1,0 +1,44 @@
+/* General */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 70px; /* Para header fijo */
+}
+
+/* Hero */
+.hero-section {
+    background: url('https://via.placeholder.com/1600x600?text=Banner+Gorras') no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    position: relative;
+}
+
+/* Header ocultable al hacer scroll */
+#mainHeader {
+    transition: top 0.3s;
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+}
+
+footer i {
+    color: #fff;
+}
+
+/* Responsive carousel captions */
+.carousel-caption {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+    .carousel-caption {
+        font-size: 0.9rem;
+    }
+}
