@@ -1,0 +1,217 @@
+/* styles2.css - Para contacto.html y productos.html */
+:root {
+  --primario: #1a1a1a;
+  --promarioOscuro: #2a2a2a;
+  --secundario: #ff3b30;
+  --secundarioOscuro: #e0352b;
+  --blanco: #FFF;
+  --negro: #000;
+  --gris: #6c757d;
+  --fuentePrincipal: "Inter", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+body {
+  background-color: var(--blanco);
+  font-size: 1.6rem;
+  font-family: var(--fuentePrincipal);
+  line-height: 1.5;
+  padding-top: 80px;
+}
+
+p {
+  font-size: 1.8rem;
+  color: var(--negro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: var(--primario);
+  font-family: var(--fuentePrincipal);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background: var(--blanco);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header__logo {
+  max-width: 150px;
+}
+
+/* Navegacion */
+.navegacion {
+  background-color: var(--primario);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.navegacion__enlace {
+  font-family: var(--fuentePrincipal);
+  color: var(--blanco);
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+  color: var(--secundario);
+}
+
+/* Formularios */
+.formulario {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.formulario__campo {
+  border: 2px solid var(--promarioOscuro);
+  background-color: transparent;
+  color: var(--negro);
+  font-size: 1.8rem;
+  font-family: var(--fuentePrincipal);
+  padding: 1rem;
+  border-radius: 8px;
+  appearance: none;
+}
+
+.formulario__submit {
+  background-color: var(--secundario);
+  border: none;
+  font-size: 2rem;
+  font-family: var(--fuentePrincipal);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  color: var(--blanco);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.formulario__submit:hover {
+  background-color: var(--secundarioOscuro);
+  transform: translateY(-2px);
+}
+
+/* Producto individual */
+.camisa {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .camisa {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+.camisa__imagen {
+  border-radius: 8px;
+}
+
+.camisa__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primario);
+  padding: 3rem 0;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__texto {
+  font-family: var(--fuentePrincipal);
+  font-size: 1.6rem;
+  color: var(--blanco);
+  margin: 0;
+}
+
+/* Contacto */
+.contacto-section {
+  padding: 5rem 0;
+}
+
+.contacto-form {
+  background: var(--blanco);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navegacion {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .navegacion__enlace {
+    font-size: 1.6rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.6rem;
+  }
+}
