@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAPS | Hatters Club</title>
+  <title>Producto | SNAPS</title>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
   <header class="header fixed-top">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">CAPS</a>
+        <a class="navbar-brand fw-bold" href="index.html">SNAPS</a>
         
         <!-- Buscador central -->
         <div class="search-container mx-auto d-none d-lg-block">
@@ -37,15 +37,15 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item"><a class="nav-link active" href="#">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="marcasDropdown" role="button" data-bs-toggle="dropdown">
                 MARCAS
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" data-brand="dandy">Dandy Hats</a></li>
-                <li><a class="dropdown-item" href="#" data-brand="31hats">31 Hats</a></li>
-                <li><a class="dropdown-item" href="#" data-brand="barbas">Barbas Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?brand=dandy">Dandy Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?brand=31hats">31 Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?brand=barbas">Barbas Hats</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="catalogo.html">NUESTRO CATÁLOGO</a></li>
@@ -70,62 +70,75 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
+  <!-- Detalles del Producto -->
+  <section class="product-detail-section py-5 mt-5">
     <div class="container">
-      <div class="hero-content text-center">
-        <h1 class="hero-title">CAPS BY HATTERS CLUB</h1>
-        <p class="hero-subtitle">Las mejores marcas a mejores precios!</p>
-        <a href="catalogo.html" class="btn btn-dark btn-lg">EXPLORAR COLECCIÓN</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Productos Destacados -->
-  <section class="products-section py-5">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">GORRAS DESTACADAS</h2>
-      
-      <div class="row g-4" id="featuredProducts">
-        <!-- Los productos se cargarán dinámicamente aquí -->
-      </div>
-      
-      <div class="text-center mt-5">
-        <a href="catalogo.html" class="btn btn-outline-dark">VER NUESTRO CATÁLOGO COMPLETO</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marcas -->
-  <section class="brands-section py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">NUESTRAS MARCAS</h2>
-      
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="brand-card text-center">
-            <div class="brand-logo">DH</div>
-            <h3>DANDY HATS</h3>
-            <p>Elegancia atemporal con un toque de sofisticación urbana</p>
-            <a href="catalogo.html?brand=dandy" class="btn btn-sm btn-outline-dark">Ver Colección</a>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="product-images">
+            <img src="https://images.unsplash.com/photo-1588850561407-76f3ca774eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                 class="img-fluid main-image" alt="REY CORDUROY" id="mainImage">
+            <div class="thumbnail-images mt-3">
+              <img src="https://images.unsplash.com/photo-1588850561407-76f3ca774eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                   class="thumbnail active" data-image="https://images.unsplash.com/photo-1588850561407-76f3ca774eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+              <img src="https://images.unsplash.com/photo-1575428652377-a2d80d2c1317?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                   class="thumbnail" data-image="https://images.unsplash.com/photo-1575428652377-a2d80d2c1317?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+            </div>
           </div>
         </div>
         
-        <div class="col-md-4">
-          <div class="brand-card text-center">
-            <div class="brand-logo">31</div>
-            <h3>31 HATS</h3>
-            <p>Estilo juvenil y fresco para el día a día</p>
-            <a href="catalogo.html?brand=31hats" class="btn btn-sm btn-outline-dark">Ver Colección</a>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="brand-card text-center">
-            <div class="brand-logo">BH</div>
-            <h3>BARBAS HATS</h3>
-            <p>Gorras clásicas con un estilo elegante y distinguido</p>
-            <a href="catalogo.html?brand=barbas" class="btn btn-sm btn-outline-dark">Ver Colección</a>
+        <div class="col-md-6">
+          <div class="product-info">
+            <span class="badge bg-dark mb-2">DANDY HATS</span>
+            <h1 class="product-title">REY CORDUROY</h1>
+            <p class="product-price">$849.00</p>
+            
+            <div class="product-description mb-4">
+              <p>Gorra de estilo clásico con detalles en cuero de primera calidad. Perfecta para ocasiones especiales y uso diario.</p>
+              <ul>
+                <li>Material: Corduroy premium</li>
+                <li>Ajuste: Ajustable</li>
+                <li>Color: Negro/Marrón</li>
+                <li>Garantía: 6 meses</li>
+              </ul>
+            </div>
+            
+            <form class="product-form">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="size" class="form-label">Talla</label>
+                  <select class="form-select" id="size" required>
+                    <option value="">Seleccionar talla</option>
+                    <option value="s">S (56-57 cm)</option>
+                    <option value="m">M (58-59 cm)</option>
+                    <option value="l">L (60-61 cm)</option>
+                    <option value="xl">XL (62-63 cm)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="quantity" class="form-label">Cantidad</label>
+                  <input type="number" class="form-control" id="quantity" value="1" min="1" max="10" required>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-dark btn-lg w-100 mb-3">AGREGAR AL CARRITO</button>
+              <button type="button" class="btn btn-outline-dark btn-lg w-100">COMPRAR AHORA</button>
+            </form>
+            
+            <div class="product-features mt-4">
+              <div class="feature-item">
+                <i class="bi bi-truck me-2"></i>
+                <span>Envío gratis en compras mayores a $500</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-arrow-left-right me-2"></i>
+                <span>Devoluciones gratis en 30 días</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-shield-check me-2"></i>
+                <span>Pago seguro</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -170,22 +183,4 @@
           <ul class="list-unstyled">
             <li><i class="bi bi-envelope me-2"></i>info@snaps.com</li>
             <li><i class="bi bi-telephone me-2"></i>+1 234 567 890</li>
-            <li><i class="bi bi-geo-alt me-2"></i>Ciudad, País</li>
-          </ul>
-        </div>
-      </div>
-      
-      <hr class="my-4">
-      
-      <div class="text-center">
-        <p>&copy; 2025 SNAPS BY HATTERS CLUB. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script personalizado -->
-  <script src="../js/script.js"></script>
-</body>
-</html>
+            <li><i class="bi
