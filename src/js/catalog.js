@@ -240,6 +240,22 @@ const catalogProducts = [
 // ... (el resto del código del catalog.js se mantiene igual) ...
 
 // Actualizar la función displayProducts para manejar errores de imagen
+
+ let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () =>{
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll){
+      header.style.top = "-80px";
+    }else{
+      header.style.top = "0";
+    }
+    lastScroll = currentScroll;
+  });
+
+
 function displayProducts(products) {
   const container = document.getElementById('productsContainer');
   
@@ -255,7 +271,6 @@ function displayProducts(products) {
     `;
     return;
   }
-  
 
   let html = '';
   products.forEach(product => {
