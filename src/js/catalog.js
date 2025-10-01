@@ -256,12 +256,13 @@ function displayProducts(products) {
     return;
   }
   
+
   let html = '';
   products.forEach(product => {
     html += `
       <div class="catalog-product">
         <img src="${product.image}" class="catalog-product-img" alt="${product.name}"
-             onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
+            onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
         <div class="catalog-product-info">
           <span class="catalog-product-brand">${getBrandName(product.brand)}</span>
           <h3 class="catalog-product-title">${product.name}</h3>
