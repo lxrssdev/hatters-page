@@ -1,10 +1,25 @@
-<!DOCTYPE html>
+<?php
+session_start();
+include "../controllers/conection.php"; // tu conexión a la base de datos
+
+// Contador de productos en el carrito
+$total_carrito = 0;
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+  $stmt = $connection->prepare("SELECT SUM(cantidad) AS total FROM carrito WHERE user_id = ?");
+  $stmt->bind_param("i", $user_id);
+  $stmt->execute();
+  $total_carrito = $stmt->get_result()->fetch_assoc()['total'] ?? 0;
+}
+?>
+
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo | SNAPS</title>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -14,13 +29,14 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
   <!-- Header -->
   <header class="header fixed-top">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">SNAPS</a>
-        
+
         <!-- Buscador central -->
         <div class="search-container mx-auto d-none d-lg-block">
           <div class="input-group search-box">
@@ -30,11 +46,11 @@
             </button>
           </div>
         </div>
-        
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
@@ -44,7 +60,9 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#" data-filter="all">Todas las marcas</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li><a class="dropdown-item" href="#" data-filter="dandy">Dandy Hats</a></li>
                 <li><a class="dropdown-item" href="#" data-filter="31hats">31 Hats</a></li>
                 <li><a class="dropdown-item" href="#" data-filter="barbas">Barbas Hats</a></li>
@@ -55,14 +73,16 @@
             <li class="nav-item"><a class="nav-link" href="#">TENDENCIAS</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
             <li class="nav-item"><a class="nav-link" href="#">GUÍA DE TALLAS</a></li>
-            
+
             <!-- Iconos de usuario/carrito -->
             <li class="nav-item ms-3">
               <div class="nav-icons">
-                <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
-                <a href="#" class="text-dark position-relative">
+                <a href="../views/login_user.php" class="text-dark me-3"><i class="bi bi-person"></i></a>
+                <a href="../controllers/carrito.php" class="text-dark position-relative">
                   <i class="bi bi-bag"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <?php echo $total_carrito; ?>
+                  </span>
                 </a>
               </div>
             </li>
@@ -76,7 +96,7 @@
   <section class="catalog-section py-5 mt-5">
     <div class="container">
       <h1 class="section-title text-center mb-4">NUESTRO CATÁLOGO</h1>
-      
+
       <!-- Filtros y ordenamiento -->
       <div class="row mb-4">
         <div class="col-md-8">
@@ -96,11 +116,38 @@
           </select>
         </div>
       </div>
-      
+
       <!-- Productos en grid como el primer diseño -->
       <div class="catalog-grid" id="productsContainer">
-        <!-- Los productos se cargarán dinámicamente aquí -->
+        <?php
+        $sql = "SELECT * FROM products"; // puedes filtrar por marca si quieres
+        $result = $connection->query($sql);
+
+        while ($producto = $result->fetch_assoc()) {
+        ?>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <img src="<?php echo $producto['imagen']; ?>" class="card-img-top" alt="<?php echo $producto['nombre']; ?>">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
+                <p class="card-text">$<?php echo number_format($producto['precio'], 2); ?></p>
+
+                <?php if (isset($_SESSION['user_id'])): ?>
+                  <!-- Usuario logueado: muestra botón -->
+                  <form action="../php/agregar_carrito.php" method="POST">
+                    <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
+                    <button type="submit" class="btn btn-dark">Agregar al carrito</button>
+                  </form>
+                <?php else: ?>
+                  <!-- Usuario NO logueado: muestra enlace -->
+                  <a href="login.php" class="btn btn-secondary">Inicia sesión para comprar</a>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
       </div>
+
     </div>
   </section>
 
@@ -117,7 +164,7 @@
             <a href="#" class="text-white me-3"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
-        
+
         <div class="col-lg-2 col-md-6 mb-4">
           <h5>NAVEGACIÓN</h5>
           <ul class="list-unstyled">
@@ -127,7 +174,7 @@
             <li><a href="#" class="text-white-50">Guía de Tallas</a></li>
           </ul>
         </div>
-        
+
         <div class="col-lg-3 col-md-6 mb-4">
           <h5>MARCAS</h5>
           <ul class="list-unstyled">
@@ -136,7 +183,7 @@
             <li><a href="catalogo.html?brand=barbas" class="text-white-50">Barbas Hats</a></li>
           </ul>
         </div>
-        
+
         <div class="col-lg-3 mb-4">
           <h5>CONTACTO</h5>
           <ul class="list-unstyled">
@@ -146,9 +193,9 @@
           </ul>
         </div>
       </div>
-      
+
       <hr class="my-4">
-      
+
       <div class="text-center">
         <p>&copy; 2025 SNAPS BY HATTERS CLUB. Todos los derechos reservados.</p>
       </div>
@@ -160,4 +207,5 @@
   <!-- Script personalizado para catálogo -->
   <script src="../js/catalog.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <?php
 require_once "conection.php";
+session_start();
 
 $error = ""; // Variable para almacenar el mensaje de error
 
@@ -33,7 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("sss", $username, $hashedPassword, $email);
 
             if ($stmt->execute()) {
-                header("Location: ../views/index.html"); // Redirige a página de éxito
+                // ✅ Guardar datos en sesión automáticamente
+                $_SESSION['user_id'] = $stmt->insert_id; // último id insertado
+                $_SESSION['username'] = $username;
+                $_SESSION['email'] = $email;
+
+                // Redirigir al inicio ya logueado
+                header("Location: ../views/index.html");
                 exit();
             } else {
                 $error = "Error al registrar: " . $stmt->error;

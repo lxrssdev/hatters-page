@@ -16,7 +16,7 @@ include "../controllers/save_user.php";
 <body>
   <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card p-4 shadow form-card">
-      <h3 class="text-center mb-4">Regístrate</h3>
+      <h3 class="text-center mb-4">Regístrate para comprar</h3>
 
       <?php if(!empty($error)): ?>
         <div class="alert alert-danger"><?php echo $error; ?></div>
