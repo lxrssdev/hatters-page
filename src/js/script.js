@@ -217,6 +217,20 @@ document.addEventListener('DOMContentLoaded', function() {
   setupBrandNavigation();
 });
 
+let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () =>{
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll){
+      header.style.top = "-80px";
+    }else{
+      header.style.top = "0";
+    }
+    lastScroll = currentScroll;
+  });
+
 // Cargar productos destacados (solo 6 productos para la página principal)
 function loadFeaturedProducts() {
   const featuredContainer = document.getElementById('featuredProducts');
@@ -239,7 +253,7 @@ function loadFeaturedProducts() {
           <div class="col-md-6 col-lg-4">
             <div class="product-card">
               <img src="${product.image}" class="product-img w-100" alt="${product.name}" 
-                   onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
+                  onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
               <div class="product-info">
                 <h4 class="product-title">${product.name}</h4>
                 <p class="product-description">${getBrandName(product.brand)}</p>
@@ -254,6 +268,7 @@ function loadFeaturedProducts() {
     
     featuredContainer.innerHTML = html;
   }
+
 }
 
 // ... (el resto del código se mantiene igual) ...
