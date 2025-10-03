@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5 {
 .hero-section {
   height: 70vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-              url('https://images.unsplash.com/photo-1556906781-2a412878d372?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+              url('../img/banner.jpeg') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
