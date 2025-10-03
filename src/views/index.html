@@ -48,8 +48,7 @@
                 <li><a class="dropdown-item" href="#" data-brand="barbas">Barbas Hats</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="catalogo.html">NUESTRO CATÁLOGO</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">ACCESORIOS</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.php">NUESTRO CATÁLOGO</a></li>
             <li class="nav-item"><a class="nav-link" href="#">TENDENCIAS</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
 
@@ -75,18 +74,40 @@
       <div class="hero-content text-center">
         <h1 class="hero-title">CAPS BY HATTERS CLUB</h1>
         <p class="hero-subtitle">Las mejores marcas a mejores precios!</p>
-        <a href="catalogo.html" class="btn btn-dark btn-lg">EXPLORAR COLECCIÓN</a>
       </div>
     </div>
   </section>
 
   <!-- Productos Destacados -->
-  <section class="products-section py-5">
+    <section class="products-section py-5">
     <div class="container">
       <h2 class="section-title text-center mb-5">GORRAS DESTACADAS</h2>
       
       <div class="row g-4" id="featuredProducts">
-        <!-- Los productos se cargarán dinámicamente aquí -->
+        <!-- Carrusel de imágenes de gorras -->
+        <div id="capsCarousel" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width:350px;">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../img/dandysfondo3.png" class="d-block w-100" alt="Dandy Fondo 3">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/31_Hats_El_Mago.png" class="d-block w-100" alt="El Mago">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/31_Hats_NYPearlsLovers.png" class="d-block w-100" alt="NY Pearls Lovers">
+            </div>
+            </div>
+            <!-- Agrega más imágenes si lo deseas -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#capsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#capsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
       </div>
       
       <div class="text-center mt-5">
