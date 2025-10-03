@@ -69,7 +69,7 @@ const catalogProducts = [
     name: "MY CAPS COLLECTION",
     brand: "31hats",
     price: 699.00,
-    image: "../img/31_Hats_Mycaps.png",
+    image: "../img/31_Hats_Mtycaps.png",
     description: "Colección personal My Caps.",
     featured: false
   },
@@ -240,22 +240,6 @@ const catalogProducts = [
 // ... (el resto del código del catalog.js se mantiene igual) ...
 
 // Actualizar la función displayProducts para manejar errores de imagen
-
- let lastScroll = 0;
-  const header = document.querySelector("header");
-
-  window.addEventListener("scroll", () =>{
-    let currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll){
-      header.style.top = "-80px";
-    }else{
-      header.style.top = "0";
-    }
-    lastScroll = currentScroll;
-  });
-
-
 function displayProducts(products) {
   const container = document.getElementById('productsContainer');
   
@@ -271,13 +255,13 @@ function displayProducts(products) {
     `;
     return;
   }
-
+  
   let html = '';
   products.forEach(product => {
     html += `
       <div class="catalog-product">
         <img src="${product.image}" class="catalog-product-img" alt="${product.name}"
-            onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
+             onerror="this.src='https://via.placeholder.com/300x300/333333/ffffff?text=Imagen+No+Disponible'">
         <div class="catalog-product-info">
           <span class="catalog-product-brand">${getBrandName(product.brand)}</span>
           <h3 class="catalog-product-title">${product.name}</h3>
