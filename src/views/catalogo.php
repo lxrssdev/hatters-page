@@ -63,16 +63,15 @@ if (isset($_SESSION['user_id'])) {
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#" data-filter="dandy">Dandy Hats</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="31hats">31 Hats</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="barbas">Barbas Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=dandy" data-filter="dandy">Dandy Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=31hats" data-filter="31hats">31 Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=barbas" data-filter="barbas">Barbas Hats</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link active" href="catalogo.html">NUESTRO CATÁLOGO</a></li>
             <li class="nav-item"><a class="nav-link" href="#">ACCESORIOS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">TENDENCIAS</a></li>
+            <li class="nav-item"><a class="nav-link" href="destacados.html">TENDENCIAS</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">GUÍA DE TALLAS</a></li>
 
             <!-- Iconos de usuario/carrito -->
             <li class="nav-item ms-3">
