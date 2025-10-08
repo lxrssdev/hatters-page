@@ -38,14 +38,14 @@ if (isset($_SESSION['user_id'])) {
         <a class="navbar-brand fw-bold" href="index.html">SNAPS</a>
 
         <!-- Buscador central -->
-        <div class="search-container mx-auto d-none d-lg-block">
+        <!-- <div class="search-container mx-auto d-none d-lg-block">
           <div class="input-group search-box">
             <input type="text" class="form-control" placeholder="Buscar..." id="catalogSearch">
             <button class="btn btn-outline" type="button" id="searchButton">
               <i class="bi bi-search"></i>
             </button>
           </div>
-        </div>
+        </div> -->
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -68,8 +68,7 @@ if (isset($_SESSION['user_id'])) {
                 <li><a class="dropdown-item" href="catalogo.php?brand=barbas" data-filter="barbas">Barbas Hats</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link active" href="catalogo.html">NUESTRO CATÁLOGO</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">ACCESORIOS</a></li>
+            <li class="nav-item"><a class="nav-link active" href="catalogo.php">NUESTRO CATÁLOGO</a></li>
             <li class="nav-item"><a class="nav-link" href="destacados.html">TENDENCIAS</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
 
@@ -133,7 +132,7 @@ if (isset($_SESSION['user_id'])) {
 
                 <?php if (isset($_SESSION['user_id'])): ?>
                   <!-- Usuario logueado: muestra botón -->
-                  <form action="../php/agregar_carrito.php" method="POST">
+                  <form action="../controllers/agregar_carrito.php" method="POST">
                     <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
                     <button type="submit" class="btn btn-dark">Agregar al carrito</button>
                   </form>
