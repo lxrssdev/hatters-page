@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../controllers/conection.php"; // tu conexión a la base de datos
+include "../controllers/conection.php";
 
 // Contador de productos en el carrito
 $total_carrito = 0;
@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo | SNAPS</title>
+  <title>Catálogo | Hatter's Club</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id'])) {
   <header class="header fixed-top">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">SNAPS</a>
+        <a class="navbar-brand fw-bold" href="index.html">Hatter's Club</a>
 
         <!-- Buscador central -->
         <!-- <div class="search-container mx-auto d-none d-lg-block">
