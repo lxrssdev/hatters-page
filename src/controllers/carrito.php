@@ -34,7 +34,7 @@ $result = $stmt->get_result();
 
     <h1 class="mb-4">🛒 Mi Carrito</h1>
 
-    <a href="catalogo.php" class="btn btn-secondary mb-3">⬅ Seguir comprando</a>
+    <a href="../views/catalogo.php" class="btn btn-secondary mb-3">⬅ Seguir comprando</a>
 
     <?php if ($result->num_rows > 0): ?>
         <table class="table table-striped">
@@ -57,7 +57,6 @@ $result = $stmt->get_result();
                 ?>
                     <tr>
                         <td><?php echo htmlspecialchars($row['nombre']); ?></td>
-                        <td><img src="<?php echo $row['imagen']; ?>" alt="" width="70"></td>
                         <td>$<?php echo number_format($row['precio'], 2); ?></td>
                         <td><?php echo $row['cantidad']; ?></td>
                         <td>$<?php echo number_format($subtotal, 2); ?></td>

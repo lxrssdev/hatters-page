@@ -15,51 +15,56 @@
 <body>
     <!-- Header -->
     <header class="header fixed-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">Hetters'Club</a>
-                
-                
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item"><a class="nav-link " href="index.html">INICIO</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="marcasDropdown" role="button" data-bs-toggle="dropdown">
-                                COLECCIONES
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-filter="all">Todas las colecciones</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#" data-filter="michael">Michael Jackson</a></li>
-                                <li><a class="dropdown-item" href="#" data-filter="mexico">Cultura Mexicana</a></li>
-                                <li><a class="dropdown-item" href="#" data-filter="scarface">Scarface</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="catalogo.php">CATÁLOGO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">ACCESORIOS</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#">TENDENCIAS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
-                        
-                        <!-- Iconos de usuario/carrito -->
-                        <li class="nav-item ms-3">
-                            <div class="nav-icons">
-                                <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
-                                <a href="#" class="text-dark position-relative">
-                                    <i class="bi bi-bag"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SNAPS</a>
+
+        <!-- Buscador central -->
+        <!-- <div class="search-container mx-auto d-none d-lg-block">
+          <div class="input-group search-box">
+            <input type="text" class="form-control" placeholder="Buscar..." id="catalogSearch">
+            <button class="btn btn-outline" type="button" id="searchButton">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div> -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="marcasDropdown" role="button" data-bs-toggle="dropdown">
+                MARCAS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-filter="all">Todas las marcas</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=dandy" data-filter="dandy">Dandy Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=31hats" data-filter="31hats">31 Hats</a></li>
+                <li><a class="dropdown-item" href="catalogo.php?brand=barbas" data-filter="barbas">Barbas Hats</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link active" href="catalogo.php">NUESTRO CATÁLOGO</a></li>
+            <li class="nav-item"><a class="nav-link" href="destacados.html">TENDENCIAS</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">CONTÁCTANOS</a></li>
+
+            <!-- Iconos de usuario/carrito -->
+            <li class="nav-item ms-3">
+              <div class="nav-icons">
+                <a href="../views/login_user.php" class="text-dark me-3"><i class="bi bi-person"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
